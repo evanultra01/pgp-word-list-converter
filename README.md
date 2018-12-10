@@ -4,7 +4,6 @@ Convert hex strings to PGP word lists and vice-versa.
 
 See [PGP word list on WikiPedia](http://en.wikipedia.org/wiki/PGP_word_list]) for more information.
 
-I've also written a Ruby version: [ruby-pgp-word-list](https://github.com/warrenguy/ruby-pgp-word-list).
 
 ## Usage
 
@@ -36,15 +35,3 @@ also singular `pgp_word_to_hex(word)` and `pgp_hex_to_word(hex, position)`.
 ````
 
 etc...
-
-## Author
-
-Warren Guy <warren@guy.net.au>
-
-https://warrenguy.me
-
-The word list itself belongs to PGP Corporation.
-
-## License
-
-MIT license. See [LICENSE](https://github.com/warrenguy/ruby-pgp-word-list/blob/master/LICENSE)
