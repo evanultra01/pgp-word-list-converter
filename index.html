@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hex PGP word list - Biometric List Converter</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+  <script src="pgp-word-list.js"></script>
+</head>
+
+<body class="bg-light" data-gr-c-s-loaded="true">
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>PGP Word List (Biometric List) Converter</h2>
+      <p class="lead">
+        Convert hex strings to <a href="http://en.wikipedia.org/wiki/PGP_word_list">PGP word list</a> and vice-versa.     </p>
+    </div>
+
+    <div class="row">
+      <div class="mb-2 col-md-2"></div>
+      <div class="mb-2 col-md-8">
+
+        <textarea class="form-control display-2 mb-2" id="pgp-input">6719 a70e 3B96 52d0 Cd3D 4Cd2 8A93 5564 97e2 bF96</textarea>
+        <button type="button" id="hex2words" class="btn btn-primary">hex to words</button>
+        <button type="button" id="words2hex" class="btn btn-primary">words to hex</button>
+      </div>
+
+      <script>
+        $('#hex2words').click(function() {
+          $('#pgp-input').val(pgp_hex_to_words($('#pgp-input').val().toUpperCase().replace(/[^0-9A-F]/g, '').match(/.{1,2}/g)).join(' '));
+        });
+        $('#words2hex').click(function() {
+          $('#pgp-input').val(pgp_words_to_hex($('#pgp-input').val().split(' ')).join(' '));
+        });
+        $('#2words').click(function() {
+          $('#pgp-input').val(toWords($('#pgp-input').val().toUpperCase()));
+        });
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>
