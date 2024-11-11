@@ -29,11 +29,31 @@
  */
 
 function pgp_hex_to_word(hex, position) { return pgp_word_list[hex][position%2]; }
+function pgp_hex_to_2word(hex, position) { return pgp_word_list[hex][1]; }
+function pgp_hex_to_3word(hex, position) { return pgp_word_list[hex][2]; }
 function pgp_hex_to_words(hexs) {
   var words = [];
   var i = 0;
   hexs.forEach(function(hex){
     words.push(pgp_hex_to_word(hex.toUpperCase(),i));
+    i++;
+  });
+  return words;
+}
+function pgp_hex_to_2words(hexs) {
+  var words = [];
+  var i = 0;
+  hexs.forEach(function(hex){
+    words.push(pgp_hex_to_2word(hex.toUpperCase(),i));
+    i++;
+  });
+  return words;
+}
+function pgp_hex_to_3words(hexs) {
+  var words = [];
+  var i = 0;
+  hexs.forEach(function(hex){
+    words.push(pgp_hex_to_3word(hex.toUpperCase(),i));
     i++;
   });
   return words;
