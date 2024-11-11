@@ -1,5 +1,5 @@
 # pgp-word-list.js
-
+# quick and dirty hack to allow for using only 2 and 3 syllable words
 Convert hex strings to PGP word lists and vice-versa.
 
 See [PGP word list on WikiPedia](http://en.wikipedia.org/wiki/PGP_word_list]) for more information.
