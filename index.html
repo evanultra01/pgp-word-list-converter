@@ -22,13 +22,21 @@
       <div class="mb-2 col-md-8">
 
         <textarea class="form-control display-2 mb-2" id="pgp-input">6719 a70e 3B96 52d0 Cd3D 4Cd2 8A93 5564 97e2 bF96</textarea>
-        <button type="button" id="hex2words" class="btn btn-primary">hex to words</button>
+        <button type="button" id="hexmodwords" class="btn btn-primary">hex to alternating words</button>
+        <button type="button" id="hex2words" class="btn btn-primary">hex to 2 syllable words</button>
+        <button type="button" id="hex3words" class="btn btn-primary">hex to 3 syllable words</button>
         <button type="button" id="words2hex" class="btn btn-primary">words to hex</button>
       </div>
 
       <script>
-        $('#hex2words').click(function() {
+        $('#hexmodwords').click(function() {
           $('#pgp-input').val(pgp_hex_to_words($('#pgp-input').val().toUpperCase().replace(/[^0-9A-F]/g, '').match(/.{1,2}/g)).join(' '));
+        });
+        $('#hex2words').click(function() {
+          $('#pgp-input').val(pgp_hex_to_2words($('#pgp-input').val().toUpperCase().replace(/[^0-9A-F]/g, '').match(/.{1,2}/g)).join(' '));
+        });
+        $('#hex3words').click(function() {
+          $('#pgp-input').val(pgp_hex_to_3words($('#pgp-input').val().toUpperCase().replace(/[^0-9A-F]/g, '').match(/.{1,2}/g)).join(' '));
         });
         $('#words2hex').click(function() {
           $('#pgp-input').val(pgp_words_to_hex($('#pgp-input').val().split(' ')).join(' '));
